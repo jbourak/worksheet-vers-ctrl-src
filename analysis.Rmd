@@ -1,0 +1,28 @@
+# Worksheet: Version Control
+
+*Note: data used in this simple analysis is from [UCL Machine Learning Repository: Student Performance Data Set](https://archive.ics.uci.edu/ml/datasets/Student+Performance).*
+
+Load the required libraries.
+
+```{r}
+library(tidyverse)
+```
+
+Read in the data.
+`mutate` the final grade `G3` to a percentage value
+(note that the value given is a score out of 20).
+Lastly, `select` only the `absences` column and the `G3` column.
+
+```{r}
+students <- read_delim("student-mat.csv", delim = ";") |> 
+  mutate(G3 = (G3 / 20) * 100) |> 
+  filter(absences, G3)
+```
+
+Plot the relationship between `absences` and `G3` (final grade) as a scatter-plot,
+with `absences` on the X-axis and `G3` on the y-axis.
+Be sure to include a title and readable axis labels.
+
+```{r}
+
+```
